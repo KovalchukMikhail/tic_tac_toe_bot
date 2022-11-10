@@ -71,5 +71,5 @@ async def restart_answer(call: types.CallbackQuery):
         if (game_list[i].id_player == id_player) and (game_list[i].id_message == id_msg):
             index = i
     game_list[index].new_game()
-    await bot.edit_message_text(text=f'Выберите кем будете играть "X" или "O". "X" ходит первым?', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=choosing_option(game_list[index]))
+    await bot.edit_message_text(text=f'Выберите кем будете играть "X" или "O". "X" ходит первым!', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=choosing_option(game_list[index]))
 
