@@ -67,12 +67,13 @@ def game_computer(current_position_player: list, current_position_computer: list
 
     if 1 in check_position_player:
         while True:
-            current = randint(0, 7)
-            if check_position_player[current] == 1:
-                for i in win_game[current]:
-                    if (i not in current_position_computer) and (i not in current_position_player):
-                        result = i
-                        return result
+            current = randint(0, 8)
+            # current = randint(0, 7)
+            # if check_position_player[current] == 1:
+            #     for i in win_game[current]:
+            if (current not in current_position_computer) and (current not in current_position_player) and current in [0, 2, 6, 8]:
+                result = current
+                return result
 
 def check_game(list_position):
     count = 0

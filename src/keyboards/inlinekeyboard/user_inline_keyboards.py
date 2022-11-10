@@ -73,7 +73,7 @@ def finish_game(current_game: Player):
     for i in range(len(current_game.list_btm)):
         id_btm = str(current_game.list_btm[i].callback_data.split(':')[1])
         sign = current_game.list_btm[i].callback_data.split(':')[3]
-        if sign == 'O':
+        if sign == '0':
             print(sign)
             current_game.list_btm[i] = InlineKeyboardButton(text=' ', callback_data=navigation_btm_callback.new(id_btm=id_btm, id_msg=current_game.id_message, sign='1'))
 
@@ -95,7 +95,7 @@ def difficulty_level(current_game: Player):
     inline_keyboard = InlineKeyboardMarkup()
     btm_first = InlineKeyboardButton(text='Легко', callback_data=navigation_btm_callback.new(id_btm='easy', id_msg=current_game.id_message, sign='0'))
     btm_second = InlineKeyboardButton(text='Нормально', callback_data=navigation_btm_callback.new(id_btm='normal', id_msg=current_game.id_message, sign='0'))
-    btm_third = InlineKeyboardButton(text='Максимум ничья', callback_data=navigation_btm_callback.new(id_btm='hard', id_msg=current_game.id_message, sign='0'))
+    btm_third = InlineKeyboardButton(text='Сложно', callback_data=navigation_btm_callback.new(id_btm='hard', id_msg=current_game.id_message, sign='0'))
     inline_keyboard.row(btm_first, btm_second)
     inline_keyboard.row(btm_third)
     return inline_keyboard
