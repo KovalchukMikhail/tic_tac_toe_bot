@@ -1,3 +1,5 @@
+# модуль содержит обычные клавиатуры
+
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 

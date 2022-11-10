@@ -1,3 +1,5 @@
+# модуль содержит обработчики команд
+
 from aiogram import types
 from aiogram.types import ReplyKeyboardRemove, InputFile, InputMediaPhoto
 from loader import dp
@@ -11,7 +13,7 @@ from Classes import Player, game_list
 async def answer_start_command(message: types.Message):
     current_game = Player(message.from_user.id, message.message_id)
     game_list.append(current_game)
-    await message.answer(text=f'Выберите кем будете играть "X" или "O". "X" ходит первым?', reply_markup=choosing_option(current_game))
+    await message.answer(text=f'Выберите кем будете играть "X" или "O". "X" ходит первым!', reply_markup=choosing_option(current_game))
     await message.answer(text=f'Для выбора еще одной игры нажмите кнопку под строкой ввода', reply_markup=another_game)
 
 

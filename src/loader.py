@@ -1,3 +1,5 @@
+# модуль содержит бот и диспетчер
+
 from aiogram import Bot, Dispatcher
 
 from config import TOKEN

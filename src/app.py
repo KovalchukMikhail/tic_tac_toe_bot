@@ -1,3 +1,5 @@
+# Основной модуль для запуска игры
+
 from aiogram.utils import executor
 from handlers import dp
 

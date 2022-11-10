@@ -1,3 +1,5 @@
+# модуль содержит объект используемый для работы с inline клавиатурами
+
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from keyboards.inlinekeyboard.callback_data import navigation_btm_callback
