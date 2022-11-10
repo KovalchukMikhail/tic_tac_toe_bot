@@ -39,7 +39,7 @@ async def answer_chose_level_command(call: types.CallbackQuery):
         if (game_list[i].id_player == id_player) and (game_list[i].id_message == id_msg):
             index = i
     game_list[index].level = id_btm
-    await bot.edit_message_text(text='Ваш ход', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=start_game_inline_keyboard(current_game=game_list[index]))
+    await bot.edit_message_text(text='.......Ваш ход.......', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=start_game_inline_keyboard(current_game=game_list[index]))
 
 
 @dp.callback_query_handler(navigation_btm_callback.filter(id_btm=['0', '1', '2', '3', '4', '5', '6', '7', '8'], sign='0'))
@@ -52,13 +52,13 @@ async def game(call: types.CallbackQuery):
     for i in range(len(game_list)):
         if (game_list[i].id_player == id_player) and (game_list[i].id_message == id_msg):
             index = i
-    await bot.edit_message_text(text='Ваш ход', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=game_inline_keyboard(current_game=game_list[index], id_btm=id_btm))
+    await bot.edit_message_text(text='.......Ваш ход.......', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=game_inline_keyboard(current_game=game_list[index], id_btm=id_btm))
     if game_list[index].finish_game == 1:
-        await bot.edit_message_text(text='Вы победили!', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
+        await bot.edit_message_text(text='....Вы победили!....', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
     elif game_list[index].finish_game == 2:
-        await bot.edit_message_text(text='Победил bot', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
+        await bot.edit_message_text(text='.....Победил bot.....', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
     elif game_list[index].finish_game == 3:
-        await bot.edit_message_text(text='Ничья', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
+        await bot.edit_message_text(text='........Ничья........', chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=finish_game(current_game=game_list[index]))
 
 
 @dp.callback_query_handler(navigation_btm_callback.filter(id_btm='restart'))
