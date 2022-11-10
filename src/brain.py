@@ -57,6 +57,10 @@ def game_computer(current_position_player: list, current_position_computer: list
             current = randint(0, 7)
             if check_position_computer[current] == 1:
                 for i in win_game[current]:
+                    if (i not in current_position_computer) and (i not in current_position_player) and i in [0, 2, 6, 8]:
+                        result = i
+                        return result
+                for i in win_game[current]:
                     if (i not in current_position_computer) and (i not in current_position_player):
                         result = i
                         return result
