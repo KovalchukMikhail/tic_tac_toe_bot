@@ -74,7 +74,6 @@ def finish_game(current_game: Player):
         id_btm = str(current_game.list_btm[i].callback_data.split(':')[1])
         sign = current_game.list_btm[i].callback_data.split(':')[3]
         if sign == '0':
-            print(sign)
             current_game.list_btm[i] = InlineKeyboardButton(text=' ', callback_data=navigation_btm_callback.new(id_btm=id_btm, id_msg=current_game.id_message, sign='1'))
 
     inline_keyboard.row(current_game.list_btm[0], current_game.list_btm[1], current_game.list_btm[2])

@@ -48,7 +48,6 @@ async def game(call: types.CallbackQuery):
     id_btm = int(call.data.split(':')[1])
     id_player = call.from_user.id
     index = 0
-    print(f'зашел {call}')
     for i in range(len(game_list)):
         if (game_list[i].id_player == id_player) and (game_list[i].id_message == id_msg):
             index = i
@@ -66,7 +65,6 @@ async def restart_answer(call: types.CallbackQuery):
     id_msg = int(call.data.split(':')[2])
     id_player = call.from_user.id
     index = 0
-    print(f'зашел {call}')
     for i in range(len(game_list)):
         if (game_list[i].id_player == id_player) and (game_list[i].id_message == id_msg):
             index = i
